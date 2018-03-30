@@ -47,23 +47,23 @@ COMMING SOON PAGE
   function setDate(){
     var now = new Date();
     if( launch < now ){
-      days.html('<h1>0</H1><p class="timersub">Day</p>');
-      hours.html('<h1>0</h1><p class="timersub">Hour</p>');
-      minutes.html('<h1>0</h1><p class="timersub">Minute</p>');
-      seconds.html('<h1>0</h1><p class="timersub">Second</p>');
+      days.html('<h1>0</H1><p class="timersub">Gün</p>');
+      hours.html('<h1>0</h1><p class="timersub">Saat</p>');
+      minutes.html('<h1>0</h1><p class="timersub">Dakika</p>');
+      seconds.html('<h1>0</h1><p class="timersub">Saniye</p>');
     }
     else{
       var s = -now.getTimezoneOffset()*60 + (launch.getTime() - now.getTime())/1000;
       var d = Math.floor(s/86400);
-      days.html('<h1>'+d+'</h1><p class="timersub">Day'+(d>1?'s':''),'</p>');
+      days.html('<h1>'+d+'</h1><p class="timersub">Gün</p>');
       s -= d*86400;
       var h = Math.floor(s/3600);
-      hours.html('<h1>'+h+'</h1><p class="timersub">Hour'+(h>1?'s':''),'</p>');
+      hours.html('<h1>'+h+'</h1><p class="timersub">Saat</p>');
       s -= h*3600;
       var m = Math.floor(s/60);
-      minutes.html('<h1>'+m+'</h1><p class="timersub">Minute'+(m>1?'s':''),'</p>');
+      minutes.html('<h1>'+m+'</h1><p class="timersub">Dakika</p>');
       s = Math.floor(s-m*60);
-      seconds.html('<h1>'+s+'</h1><p class="timersub">Second'+(s>1?'s':''),'</p>');
+      seconds.html('<h1>'+s+'</h1><p class="timersub">Saniye</p>');
       setTimeout(setDate, 1000);
     }
   }
@@ -78,7 +78,7 @@ COMMING SOON PAGE
     var markerConfig = mapConfig[locId].marker;
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(markerConfig.lat, markerConfig.long),
-      title: 'Open in Google Maps',
+      title: 'Google Maps ile açın',
       icon: 'assets/images/custom-map-marker.png',
       map: map
     });
